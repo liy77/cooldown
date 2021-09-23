@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@types/node": "^16.9.6",
+    "collection": "JustAWaifuHunter/collection#pelicano"
+  },
+  "name": "cooldown",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT"
+}
