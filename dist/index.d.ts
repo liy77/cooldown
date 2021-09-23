@@ -7,6 +7,18 @@ declare interface CooldownManager {
     on(eventName: "start", listener: (id?: string) => any): this;
     once(eventName: "start", listener: (id?: string) => any): this;
 }
+/**
+ * @example
+ * const CooldownManager = require("cooldown")
+ *
+ * const cm = new CooldownManager(50000)
+ *
+ * cm.set("someId")
+ *
+ * cm.waitToEnd("someId").then(() => {
+ *   console.log("Ended.")
+ * })
+ */
 declare class CooldownManager extends EventEmitter {
     time: number;
     cache: Collection<string, {
@@ -21,3 +33,4 @@ declare class CooldownManager extends EventEmitter {
     waitToEnd(id: string): Promise<unknown>;
 }
 export = CooldownManager;
+//# sourceMappingURL=index.d.ts.map

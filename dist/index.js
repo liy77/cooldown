@@ -4,6 +4,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 const events_1 = require("events");
 const collection_1 = __importDefault(require("collection"));
+/**
+ * @example
+ * const CooldownManager = require("cooldown")
+ *
+ * const cm = new CooldownManager(50000)
+ *
+ * cm.set("someId")
+ *
+ * cm.waitToEnd("someId").then(() => {
+ *   console.log("Ended.")
+ * })
+ */
 class CooldownManager extends events_1.EventEmitter {
     time;
     cache = new collection_1.default();

@@ -8,6 +8,18 @@ declare interface CooldownManager {
   on(eventName: "start", listener: (id?: string) => any): this;
   once(eventName: "start", listener: (id?: string) => any): this;
 }
+/**
+ * @example
+ * const CooldownManager = require("cooldown")
+ * 
+ * const cm = new CooldownManager(50000)
+ * 
+ * cm.set("someId")
+ * 
+ * cm.waitToEnd("someId").then(() => {
+ *   console.log("Ended.")
+ * })
+ */
 class CooldownManager extends EventEmitter {
   cache: Collection<
     string,
